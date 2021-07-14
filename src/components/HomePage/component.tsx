@@ -21,8 +21,6 @@ export default function HomePage(props: HomePageProps): JSX.Element {
 
   const styles = useStyles();
 
-  React.useState();
-
   const messages = [
     'When you cannot find a suitable gif on tenor or giphy',
     'When you just want to find something instead of scrolling infinetely through instagram',
@@ -31,9 +29,7 @@ export default function HomePage(props: HomePageProps): JSX.Element {
 
   function handleSearchChange(e: any) {
     const query = e.target.value;
-    if (query.length > 3) {
-      getMultipleImages(query);
-    }
+    getMultipleImages(query);
   }
 
   return (
