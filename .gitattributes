@@ -1,0 +1,14 @@
+# Default to LF line endings
+* text=auto eol=lf
+
+# Images
+*.png binary
+*.jpg binary
+*.pdf binary
+*.ico binary
+
+# Fonts
+*.eot binary
+*.ttf binary
+*.woff binary
+*.woff2 binary
