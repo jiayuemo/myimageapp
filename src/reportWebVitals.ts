@@ -1,10 +1,10 @@
-import { 
-    ReportHandler,
-    getCLS,
-    getFID,
-    getFCP,
-    getLCP,
-    getTTFB
+import {
+  ReportHandler,
+  getCLS,
+  getFID,
+  getFCP,
+  getLCP,
+  getTTFB,
 } from 'web-vitals';
 
 const reportWebVitals = (onPrefEntry?: ReportHandler): void => {
