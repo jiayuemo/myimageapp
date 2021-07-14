@@ -6,7 +6,7 @@ import { LoadingState } from './types';
  * @param requestName The name of the request
  * @returns boolean loadingStatus
  */
-export function selectError(
+export function selectLoading(
   state: LoadingState,
   requestName: string,
 ): boolean {

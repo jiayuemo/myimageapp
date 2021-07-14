@@ -13,10 +13,11 @@ export default function Header(): JSX.Element {
   return (
     <AppBar position="static">
       <Toolbar>
-        <Link to="/" />
-        <Typography>
-          MyCoolImageSearchApp
-        </Typography>
+        <Link to="/">
+          <Typography>
+            MyCoolImageSearchApp
+          </Typography>
+        </Link>
       </Toolbar>
     </AppBar>
   );

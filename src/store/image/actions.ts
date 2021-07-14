@@ -40,8 +40,9 @@ export const getMultipleImages = (
 ) => async (dispatch: AppDispatch): Promise<void> => {
   dispatch(getImageRequest());
   try {
-    console.log(process.env.npm_config_image_search_api_key);
-    const myClient = new ImageSearchClient();
+    const secretKey = process.env.REACT_APP_API_SECRET;
+    const apiURL = process.env.REACT_APP_API_URL;
+    const myClient = new ImageSearchClient(apiURL, secretKey);
     const images = await myClient.searchImages(query);
     dispatch(getImageSuccess(images));
   } catch (error) {
@@ -60,8 +61,9 @@ export const getSingleImage = (
 ) => async (dispatch: AppDispatch): Promise<void> => {
   dispatch(getImageRequest());
   try {
-    console.log(process.env.npm_config_image_search_api_key);
-    const myClient = new ImageSearchClient();
+    const secretKey = process.env.REACT_APP_API_SECRET;
+    const apiURL = process.env.REACT_APP_API_URL;
+    const myClient = new ImageSearchClient(apiURL, secretKey);
     const images = await myClient.searchImageById(id);
     dispatch(getImageSuccess(images));
   } catch (error) {

@@ -13,8 +13,8 @@ class FetchClient implements API {
   *
   * @return a client that uses the fetch api to hit a defined endpoint
   */
-  constructor(secretApiKey = 'mySecretKey') {
-    this.prefix = '/image-search/api';
+  constructor(apiURL = '', secretApiKey = 'mySecretKey') {
+    this.prefix = apiURL;
     this.apiKey = secretApiKey;
   }
 
@@ -25,8 +25,7 @@ class FetchClient implements API {
    * @return A promise containing an array of image hit
    */
   async searchImages(query: string): Promise<Array<ImageHit>> {
-    const response = await fetch(`${this.prefix}/key=${this.apiKey}&q=${query}`);
-
+    const response = await fetch(`${this.prefix}/?key=${this.apiKey}&q=${query}&safesearch=true`);
     await FetchClient.handleError(response);
     const json = await response.json();
     const imageHits = json.hits;
@@ -40,8 +39,7 @@ class FetchClient implements API {
    * @return A promise containing an array of image hit, single element
    */
   async searchImageById(id: number): Promise<Array<ImageHit>> {
-    const response = await fetch(`${this.prefix}/key=${this.apiKey}&id=${id}`);
-
+    const response = await fetch(`${this.prefix}/?key=${this.apiKey}&id=${id}&safesearch=true`);
     await FetchClient.handleError(response);
     const json = await response.json();
     const imageHits = json.hits;

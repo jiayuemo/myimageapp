@@ -1,4 +1,4 @@
 /** @module components/HomePage */
-import HomePage from './component';
+import HomePage from './container';
 
 export default HomePage;

@@ -11,6 +11,11 @@ export default function Header(): JSX.Element {
   return (
     <footer>
       <Paper>
+        <a href="https://pixabay.com/" target="_blank" rel="noreferrer">
+          <Typography>
+            Powered by the Pixibay API
+          </Typography>
+        </a>
         <Typography>
           {`MyCoolImageSearchApp v${process.env.REACT_APP_VERSION}`}
         </Typography>
