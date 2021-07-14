@@ -1,0 +1,6 @@
+# Configuration example file, this one is tracked
+# but ".npmrc" is not tracked, gitignored
+
+# API keys
+pixabay-url=foobar.com
+pixabay-api-key=MYSUPERSECRETKEY

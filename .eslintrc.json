@@ -1,0 +1,45 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/__tests__/*"],
+      "rules": {
+        "react/jsx-props-no-spreading": "off"
+      }
+    }
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "project": "./tsconfig.json",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", "never"],
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "paths": ["./src/"]
+      }
+    }
+  }
+}
