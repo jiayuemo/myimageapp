@@ -6,6 +6,7 @@ import ImageList from '@material-ui/core/ImageList';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ImageListItem from '@material-ui/core/ImageListItem';
 import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom';
 import Page from '../Page';
 import { HomePageProps } from './types';
 import useStyles from './useStyles';
@@ -52,12 +53,17 @@ export default function HomePage(props: HomePageProps): JSX.Element {
               <ImageList>
                 {images.map((item: ImageHit) => (
                   <ImageListItem key={item.id}>
-                    <img
-                      srcSet={`${item.previewURL}?w=164&h=164&fit=crop&auto=format 1x,
-                      ${item.previewURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-                      alt={`${item.id}`}
-                      loading="lazy"
-                    />
+                    <Link
+                      to={`/images/${item.id}`}
+                    >
+                      <img
+                        srcSet={`${item.previewURL}?w=164&h=164&fit=crop&auto=format 1x, 
+                        ${item.previewURL}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                        alt={`${item.id}`}
+                        loading="lazy"
+                      />
+                    </Link>
+
                   </ImageListItem>
                 ))}
               </ImageList>
